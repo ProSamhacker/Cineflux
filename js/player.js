@@ -24,30 +24,24 @@ async function fetchFromAPI(endpoint) {
 // Load player iframe
 function loadPlayer(type, id, season = null, episode = null) {
     playerContainer.innerHTML = '';
-    let newPlayerUrl; // Use a new variable name
-
+    
+    // ... your code to set the player URL (newPlayerUrl or vidkingUrl)
+    let vidkingUrl;
     if (type === 'movie') {
-        // --- THIS IS THE OLD LINE ---
-        // vidkingUrl = `https://www.vidking.net/embed/movie/${id}`;
-        
-        // --- THIS IS THE NEW LINE ---
-        newPlayerUrl = `https://vidsrc.me/embed/movie?tmdb=${id}`;
-
+        vidkingUrl = `https://vidsrc.me/embed/movie?tmdb=${id}`; // Or your current player
     } else {
-        // --- THIS IS THE OLD LINE ---
-        // vidkingUrl = `https://www.vidking.net/embed/tv/${id}/${season}/${episode}`;
-        
-        // --- THIS IS THE NEW LINE ---
-        newPlayerUrl = `https://vidsrc.me/embed/tv?tmdb=${id}&season=${season}&episode=${episode}`;
+        vidkingUrl = `https://vidsrc.me/embed/tv?tmdb=${id}&season=${season}&episode=${episode}`; // Or your current player
     }
-
+    
     const iframe = document.createElement('iframe');
-    
-    // Make sure to use your new URL variable here
-    iframe.src = newPlayerUrl; 
-    
+    iframe.src = vidkingUrl; // Use your player's URL
     iframe.allowFullscreen = true;
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+
+    // --- ADD THIS LINE ---
+    // This tells the browser to block pop-ups, but allow scripts and fullscreen.
+    iframe.sandbox = "allow-scripts allow-same-origin allow-fullscreen allow-presentation";
+
     playerContainer.appendChild(iframe);
 }
 
