@@ -22,32 +22,26 @@ async function fetchFromAPI(endpoint) {
 }
 
 // Load player iframe
+// Inside js/player.js
 function loadPlayer(type, id, season = null, episode = null) {
     playerContainer.innerHTML = '';
-    let newPlayerUrl; // Use a new variable name
+    let playerUrl; // Renamed variable
 
     if (type === 'movie') {
-        // --- THIS IS THE OLD LINE ---
-        // vidkingUrl = `https://www.vidking.net/embed/movie/${id}`;
-        
-        // --- THIS IS THE NEW LINE ---
-        newPlayerUrl = `https://vidsrc.me/embed/movie?tmdb=${id}`;
-
+        // --- NEW LINE for 2Embed ---
+        playerUrl = `https://www.2embed.cc/embed/${id}`;
     } else {
-        // --- THIS IS THE OLD LINE ---
-        // vidkingUrl = `https://www.vidking.net/embed/tv/${id}/${season}/${episode}`;
-        
-        // --- THIS IS THE NEW LINE ---
-        newPlayerUrl = `https://vidsrc.me/embed/tv?tmdb=${id}&season=${season}&episode=${episode}`;
+        // --- NEW LINE for 2Embed ---
+        playerUrl = `https://www.2embed.cc/embedtv/${id}&s=${season}&e=${episode}`;
     }
 
     const iframe = document.createElement('iframe');
-    
-    // Make sure to use your new URL variable here
-    iframe.src = newPlayerUrl; 
-    
+    iframe.src = playerUrl;
     iframe.allowFullscreen = true;
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    
+    // Make sure you have REMOVED the iframe.sandbox line
+    
     playerContainer.appendChild(iframe);
 }
 
