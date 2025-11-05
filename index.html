@@ -1,15 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineStream - Watch Movies & TV Shows</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Watch the latest movies and TV shows online">
+</head>
 <body>
     <header>
-        </header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="8" fill="#e50914"/>
+                    <path d="M12 10L28 20L12 30V10Z" fill="white"/>
+                </svg>
+                <span>CineStream</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html" class="active">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="tvshows.html">TV Shows</a>
+            </nav>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Search movies, shows..." required>
+                <button type="submit">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </header>
 
     <main class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Unlimited movies, TV shows, and more</h1>
+                <p class="hero-subtitle">Watch anywhere. Stream anytime.</p>
+            </div>
+        </section>
+
+        <!-- Trending Section -->
         <section>
-            <h2>Popular Movies</h2>
-            </section>
+            <h2 class="section-title">🔥 Trending Now</h2>
+            <div id="trending-gallery" class="gallery">
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+            </div>
+        </section>
+
+        <!-- Popular Movies -->
         <section>
-            <h2>Popular TV Shows</h2>
-            </section>
+            <div class="section-header">
+                <h2 class="section-title">Popular Movies</h2>
+                <a href="movies.html" class="view-all">View All →</a>
+            </div>
+            <div id="movie-gallery" class="gallery">
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+            </div>
+        </section>
+
+        <!-- Popular TV Shows -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">Popular TV Shows</h2>
+                <a href="tvshows.html" class="view-all">View All →</a>
+            </div>
+            <div id="tv-gallery" class="gallery">
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+            </div>
+        </section>
+
+        <!-- Top Rated Movies -->
+        <section>
+            <h2 class="section-title">⭐ Top Rated Movies</h2>
+            <div id="toprated-gallery" class="gallery">
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CineStream. All rights reserved.</p>
+            <p class="disclaimer">This site uses TMDB API. Content is streamed from third-party sources.</p>
+        </div>
+    </footer>
     
     <script src="js/main.js"></script>
 </body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results - CineStream</title>
+    <title>TV Shows - CineStream</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
             <nav class="nav-menu">
                 <a href="index.html">Home</a>
                 <a href="movies.html">Movies</a>
-                <a href="tvshows.html">TV Shows</a>
+                <a href="tvshows.html" class="active">TV Shows</a>
             </nav>
             <form id="search-form">
                 <input type="text" id="search-input" placeholder="Search movies, shows..." required>
@@ -35,11 +35,23 @@
 
     <main class="container">
         <div class="page-header">
-            <h1 class="page-title" id="search-title">Search Results</h1>
+            <h1 class="page-title">📺 TV Shows</h1>
         </div>
 
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="popular">Popular</button>
+            <button class="filter-btn" data-filter="top_rated">Top Rated</button>
+            <button class="filter-btn" data-filter="on_the_air">On The Air</button>
+            <button class="filter-btn" data-filter="airing_today">Airing Today</button>
+        </div>
+
+        <!-- TV Shows Gallery -->
         <section>
-            <div id="results-gallery" class="gallery">
+            <div id="tvshows-gallery" class="gallery">
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
+                <div class="skeleton-loader"></div>
                 <div class="skeleton-loader"></div>
                 <div class="skeleton-loader"></div>
                 <div class="skeleton-loader"></div>
@@ -47,6 +59,9 @@
                 <div class="skeleton-loader"></div>
             </div>
         </section>
+
+        <!-- Load More Button -->
+        <button id="load-more" class="load-more">Load More</button>
     </main>
 
     <footer>
@@ -56,6 +71,6 @@
         </div>
     </footer>
     
-    <script src="js/search.js"></script>
+    <script src="js/tvshows.js"></script>
 </body>
 </html>

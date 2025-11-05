@@ -3,26 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Now Playing</title>
+    <title>Now Playing - CineStream</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="player-page">
-
     <header>
         <div class="container">
-            <a href="index.html" class="logo">MySite</a>
+            <a href="index.html" class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="8" fill="#e50914"/>
+                    <path d="M12 10L28 20L12 30V10Z" fill="white"/>
+                </svg>
+                <span>CineStream</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="movies.html">Movies</a>
+                <a href="tvshows.html">TV Shows</a>
+            </nav>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Search movies, shows..." required>
+                <button type="submit">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </form>
         </div>
     </header>
 
     <main class="container">
-        <div id="tv-controls">
-            <select id="season-select"></select>
+        <!-- Player Container -->
+        <div id="player-container"></div>
+
+        <!-- Media Details -->
+        <div id="media-details" class="media-details"></div>
+
+        <!-- TV Show Controls -->
+        <div id="tv-controls" style="display: none;">
+            <div class="controls-header">
+                <h3>Episodes</h3>
+                <select id="season-select"></select>
+            </div>
             <div id="episode-list"></div>
         </div>
-
-        <div id="player-container">
-            </div>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CineStream. All rights reserved.</p>
+            <p class="disclaimer">This site uses TMDB API. Content is streamed from third-party sources.</p>
+        </div>
+    </footer>
     
     <script src="js/player.js"></script>
 </body>
