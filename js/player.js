@@ -23,16 +23,17 @@ async function fetchFromAPI(endpoint) {
 
 // Load player iframe
 // Inside js/player.js
+
 function loadPlayer(type, id, season = null, episode = null) {
     playerContainer.innerHTML = '';
-    let playerUrl; // Renamed variable
+    let playerUrl; 
 
     if (type === 'movie') {
-        // --- NEW LINE for 2Embed ---
-        playerUrl = `https://www.2embed.cc/embed/${id}`;
+        // --- NEW URL ---
+        playerUrl = `https://vsrc.su/embed/movie?tmdb=${id}`;
     } else {
-        // --- NEW LINE for 2Embed ---
-        playerUrl = `https://www.2embed.cc/embedtv/${id}&s=${season}&e=${episode}`;
+        // --- NEW URL ---
+        playerUrl = `https://vsrc.su/embed/tv?tmdb=${id}&season=${season}&episode=${episode}`;
     }
 
     const iframe = document.createElement('iframe');
@@ -40,8 +41,8 @@ function loadPlayer(type, id, season = null, episode = null) {
     iframe.allowFullscreen = true;
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
     
-    // Make sure you have REMOVED the iframe.sandbox line
-    
+    // Remember to REMOVE the iframe.sandbox line
+
     playerContainer.appendChild(iframe);
 }
 
